@@ -1,0 +1,106 @@
+Initial Git Configuration
+
+Set username (globally)
+git config --global user.name "Umesh" 
+Set email address (globally)
+git config --global user.email “umser@test.com”
+
+Define default editor for git edit (in linux: vim default) - optional
+
+git config --global core.editor nano
+To review / list git global config
+git config –list
+
+To view colorful git output
+git config color.ui  true
+
+Formatting and Whitespace as per Linux style
+git config --global core.autocrlf true
+
+To store git user credentials permanently
+git config credential.helper store
+
+To view command help
+git help    <command>
+
+Creating a Git repo 
+Fresh setup of git - local repository (not empty)
+git init
+git add <specific_filename> or git add . (whole directory)
+git commit -m “initial setup”
+Git clone to specific branch to desired folder (empty)
+git clone -b <branch_name> <git_repo_url> <destination_folder_path>
+
+
+Basic Commands
+To add particular file / folder in git
+git add <filename>
+git add <path to folder>
+To commit (please mention commit message, don’t put it empty)
+git commit -m “some message”
+
+To get latest updates from remote repository (after commit)
+git pull origin <branch>
+To push local changes to remote repository
+git push origin <branch>
+View status of files in working directory and staging area
+git status
+To check conflicts
+git show conflicts
+To see what is modified but unstaged
+git diff
+
+To see a list of staged changes
+git diff --cached
+To see a log of all changes in local repo
+git log         or     git log --oneline (shorter version)
+To show only the 5 most recent updates in local repo
+git log -5
+To undo changes on a file before you have committed it (on local repository)
+git reset HEAD -- filename (unstages the file)
+git checkout -- filename (undo changes)
+To change remote repository url
+git remote set-url origin <new_git_url>
+
+Branching and merging
+To create a new local branch
+git branch -b <branch_name>
+To list local branches (* = current branch)
+git branch
+To list remote branches
+git branch --r
+To switch to a given local branch
+git checkout <branch_name>
+To merge changes from a branch into the local master
+git checkout  master
+git merge <branch>
+To delete local branch
+git branch -d <branch>
+To delete remote branch
+git push <remote_name> --delete <branch_name>
+To setup remote repository url path
+git remote add origin <repo_url_path>
+
+Git conflict resolve
+To Take our changes
+git checkout --ours src/Template/Element/ads/dfp/ad_landing_atf_300x250.ctp
+To take others / remote changes
+git checkout --theirs src/Template/Element/ads/dfp/ad_landing_atf_300x250.ctp
+After merge, add conflict file / folder
+git add <path_to_filename>    or     git add <path_to_folder>
+Commit changes
+git commit -m "dasasd"
+
+List out unmerged files after git merge failure
+git ls-files -u
+Git merge from local branch
+git merge --ff development (fast forward if possible)
+git merge --ff-only development (fast forward only)
+
+
+References
+https://github.com/joshnh/Git-Commands 
+https://git-scm.com/videos 
+http://rogerdudler.github.io/git-guide/ 
+https://courses.cs.washington.edu/courses/cse403/13au/lectures/git.ppt.pdf 
+https://www.slideshare.net/jomikr/quick-introduction-to-git 
